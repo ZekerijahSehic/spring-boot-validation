@@ -11,18 +11,16 @@ import javax.validation.Valid;
 public class UserController {
 
     @RequestMapping("add")
-    public static String toAdd(User user){
+    public String toAdd(User user) {
         return "add";
     }
 
     @RequestMapping("addUser")
-    public String add(@Valid User user, BindingResult result){
-        if(result.hasErrors()) {
+    public String add(@Valid User user, BindingResult result) {
+        if (result.hasErrors()) {
             return "add";
         }
-        System.out.println("Save user " + user );
-        return "succes";
+        System.out.println("Save user =" + user);
+        return "success";
     }
-
-
 }
